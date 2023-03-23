@@ -6,7 +6,7 @@ namespace Lego_and_other_toys_Project
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //lmfao praim neshto
         }
     }
 }
