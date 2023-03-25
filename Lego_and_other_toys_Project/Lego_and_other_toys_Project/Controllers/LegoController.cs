@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Lego_and_other_toys_Project.Controllers
 {
-    internal class LegoController
+    public class LegoController
     {
         private ToyStoreContext context;
         public LegoController()
@@ -51,7 +51,6 @@ namespace Lego_and_other_toys_Project.Controllers
             Console.WriteLine(set.Rating);
             Console.WriteLine(set.In_stock);
             Console.WriteLine(set.In_Production);
-
         }
 
         public LegoSet SearchByRating(string rating)

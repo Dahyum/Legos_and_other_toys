@@ -27,8 +27,6 @@ namespace Lego_and_other_toys_Project.Controllers
             Console.WriteLine(babytoy.Toy_name);
             Console.WriteLine(babytoy.Size);
             Console.WriteLine(babytoy.Age);
-            
-
         }
 
         public BabyToy SearchByAge(int age)
@@ -42,8 +40,6 @@ namespace Lego_and_other_toys_Project.Controllers
             Console.WriteLine(babytoy.Toy_name);
             Console.WriteLine(babytoy.Size);
             Console.WriteLine(babytoy.Age);
-
-
         }
     }
 }
