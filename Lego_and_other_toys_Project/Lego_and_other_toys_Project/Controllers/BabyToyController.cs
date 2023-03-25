@@ -25,9 +25,9 @@ namespace Lego_and_other_toys_Project.Controllers
             }
             foreach (var item in babytoy)
             {
-                Console.WriteLine(item.Toy_name);
-                Console.WriteLine(item.Size);
-                Console.WriteLine(item.Age);
+                Console.WriteLine($"Name: {item.Toy_name}");
+                Console.WriteLine($"Size {item.Size}");
+                Console.WriteLine($"Age: {item.Age}\n-------------------------");
             }
         }
 
@@ -40,9 +40,9 @@ namespace Lego_and_other_toys_Project.Controllers
             }
             foreach (var item in babytoy)
             {
-                Console.WriteLine(item.Toy_name);
-                Console.WriteLine(item.Size);
-                Console.WriteLine(item.Age);
+                Console.WriteLine($"Name: {item.Toy_name}");
+                Console.WriteLine($"Size {item.Size}");
+                Console.WriteLine($"Age: {item.Age}\n-------------------------");
             }
         }
     }

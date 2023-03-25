@@ -24,10 +24,10 @@ namespace Lego_and_other_toys_Project.Controllers
             }
             foreach (var item in sets)
             {
-                Console.WriteLine(item.Toy_name);
-                Console.WriteLine(item.NoP);
-                Console.WriteLine(item.Age);
-                Console.WriteLine(item.Price);
+                Console.WriteLine($"Name: {item.Toy_name}");
+                Console.WriteLine($"Number of Players: {item.NoP}");
+                Console.WriteLine($"Age: {item.Age}");
+                Console.WriteLine($"Price: {item.Price}\n-------------------------");
             }
         }
             
@@ -41,10 +41,10 @@ namespace Lego_and_other_toys_Project.Controllers
             }
             foreach (var item in sets)
             {
-                Console.WriteLine(item.Toy_name);
-                Console.WriteLine(item.NoP);
-                Console.WriteLine(item.Age);
-                Console.WriteLine(item.Price);
+                Console.WriteLine($"Name: {item.Toy_name}");
+                Console.WriteLine($"Number of Players: {item.NoP}");
+                Console.WriteLine($"Age: {item.Age}");
+                Console.WriteLine($"Price: {item.Price}\n-------------------------");
             }
         }
 

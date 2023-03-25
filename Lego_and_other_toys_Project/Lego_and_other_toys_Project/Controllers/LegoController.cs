@@ -25,15 +25,14 @@ namespace Lego_and_other_toys_Project.Controllers
             }
             foreach (var item in sets)
             {
-
-                Console.WriteLine(item.Set_name);
-                Console.WriteLine(item.Series_name);
-                Console.WriteLine(item.Age_group);
-                Console.WriteLine(item.NoB);
-                Console.WriteLine(item.Price);
-                Console.WriteLine(item.Rating);
-                Console.WriteLine(item.In_stock);
-                Console.WriteLine(item.In_Production);
+                Console.WriteLine($"Name of Set: {item.Set_name}");
+                Console.WriteLine($"Name of Series: {item.Series_name}");
+                Console.WriteLine($"Age group: {item.Age_group}");
+                Console.WriteLine($"Number of Bricks: {item.NoB}");
+                Console.WriteLine($"Price: {item.Price}");
+                Console.WriteLine($"Rating: {item.Rating}");
+                Console.WriteLine($"In Stock?: {item.In_stock}");
+                Console.WriteLine($"In Production?: {item.In_Production}\n-------------------------");
             }
         }
 
@@ -46,15 +45,14 @@ namespace Lego_and_other_toys_Project.Controllers
             }
             foreach (var item in sets)
             {
-
-                Console.WriteLine(item.Set_name);
-                Console.WriteLine(item.Series_name);
-                Console.WriteLine(item.Age_group);
-                Console.WriteLine(item.NoB);
-                Console.WriteLine(item.Price);
-                Console.WriteLine(item.Rating);
-                Console.WriteLine(item.In_stock);
-                Console.WriteLine(item.In_Production);
+                Console.WriteLine($"Name of Set: {item.Set_name}");
+                Console.WriteLine($"Name of Series: {item.Series_name}");
+                Console.WriteLine($"Age group: {item.Age_group}");
+                Console.WriteLine($"Number of Bricks: {item.NoB}");
+                Console.WriteLine($"Price: {item.Price}");
+                Console.WriteLine($"Rating: {item.Rating}");
+                Console.WriteLine($"In Stock?: {item.In_stock}");
+                Console.WriteLine($"In Production?: {item.In_Production}\n-------------------------");
             }
         }
 
@@ -67,19 +65,15 @@ namespace Lego_and_other_toys_Project.Controllers
             }
             foreach (var item in sets)
             {
-
-            Console.WriteLine(item.Set_name);
-            Console.WriteLine(item.Series_name);
-            Console.WriteLine(item.Age_group);
-            Console.WriteLine(item.NoB);
-            Console.WriteLine(item.Price);
-            Console.WriteLine(item.Rating);
-            Console.WriteLine(item.In_stock);
-            Console.WriteLine(item.In_Production);
+                Console.WriteLine($"Name of Set: {item.Set_name}");
+                Console.WriteLine($"Name of Series: {item.Series_name}");
+                Console.WriteLine($"Age group: {item.Age_group}");
+                Console.WriteLine($"Number of Bricks: {item.NoB}");
+                Console.WriteLine($"Price: {item.Price}");
+                Console.WriteLine($"Rating: {item.Rating}");
+                Console.WriteLine($"In Stock?: {item.In_stock}");
+                Console.WriteLine($"In Production?: {item.In_Production}\n-------------------------");
             }
-
-            
-
         }
     }
 }

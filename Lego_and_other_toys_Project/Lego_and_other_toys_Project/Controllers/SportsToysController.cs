@@ -24,9 +24,9 @@ namespace Lego_and_other_toys_Project.Controllers
             }
             foreach (var item in sets)
             {
-                Console.WriteLine(item.ToyName);
-                Console.WriteLine(item.Sport);
-                Console.WriteLine(item.Price);
+                Console.WriteLine($"Name: {item.ToyName}");
+                Console.WriteLine($"Sport: {item.Sport}");
+                Console.WriteLine($"Price: {item.Price}\\n-------------------------");
             }
         }
         
@@ -39,9 +39,9 @@ namespace Lego_and_other_toys_Project.Controllers
             }
             foreach (var item in sets)
             {
-                Console.WriteLine(item.ToyName);
-                Console.WriteLine(item.Sport);
-                Console.WriteLine(item.Price);
+                Console.WriteLine($"Name: {item.ToyName}");
+                Console.WriteLine($"Sport: {item.Sport}");
+                Console.WriteLine($"Price: {item.Price}\\n-------------------------");
             }
         }
     }
