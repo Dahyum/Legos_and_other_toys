@@ -29,8 +29,8 @@ namespace Lego_and_other_toys_Project.Input
             Console.WriteLine();
             Console.WriteLine("   " + "WHAT WOULD YOU LIKE TO SEARCH BY?");
             Console.WriteLine();
-            Console.WriteLine("1 - Search by NAME\n2 - Search by SERIES\n3 - Search by AGE GROUP\n4 - Search by  NUMBER OF BRICKS\n" +
-                "5 - Search by PRICE\n6 - Search by RATING\n");
+            Console.WriteLine("1 - Search by NAME\n" +
+                "2 - Search by PRICE\n3 - Search by RATING\n");
         }
 
         public static void SportMenu()
@@ -48,7 +48,16 @@ namespace Lego_and_other_toys_Project.Input
             Console.WriteLine();
             Console.WriteLine(" " + "WHAT WOULD YOU LIKE TO SEARCH BY?");
             Console.WriteLine();
-            Console.WriteLine("1 - ");
+            Console.WriteLine("1 - Search by AGE\n2 - Search by Size");
+        }
+
+        public static void BoardGameMenu()
+        {
+            Console.WriteLine("          " + "GOOD CHOICE!");
+            Console.WriteLine();
+            Console.WriteLine(" " + "WHAT WOULD YOU LIKE TO SEARCH BY?");
+            Console.WriteLine();
+            Console.WriteLine("1 - Search by AGE\n2 - Search by NUMBER OF PLAYERS");
         }
 
     }

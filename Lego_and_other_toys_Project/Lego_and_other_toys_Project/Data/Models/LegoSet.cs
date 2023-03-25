@@ -58,4 +58,5 @@ namespace Lego_and_other_toys_Project.Data.Models
         [Required]
         public bool In_Production { get; set; }
     }
+    
 }
