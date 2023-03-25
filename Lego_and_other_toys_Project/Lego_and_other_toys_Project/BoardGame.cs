@@ -22,7 +22,7 @@ namespace Lego_and_other_toys_Project
             Age = age;
             Price = price;
         }
-
+        [Key]
         [Required]
         public int Toy_id { get; set; }
 

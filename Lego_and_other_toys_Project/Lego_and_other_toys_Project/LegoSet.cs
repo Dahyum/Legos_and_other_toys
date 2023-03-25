@@ -27,7 +27,7 @@ namespace Lego_and_other_toys_Project
             Rating = rating;
             In_Production = in_Production;
         }
-
+        [Key]
         [Required]
         public int Set_id { get; set; }
 
