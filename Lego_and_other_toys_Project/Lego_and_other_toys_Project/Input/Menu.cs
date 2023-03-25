@@ -32,6 +32,7 @@ namespace Lego_and_other_toys_Project.Input
             Console.WriteLine("1 - SPORT TOYS?");
             Console.WriteLine("2 - BABY toys?");
             Console.WriteLine("3 - BOARD games?");
+            Console.WriteLine("4 - EXIT?");
 
 
         }
