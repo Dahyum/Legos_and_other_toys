@@ -2,7 +2,7 @@
 
 namespace Lego_and_other_toys_Project.Migrations
 {
-    public partial class initil : Migration
+    public partial class ids_autoicrement : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -39,6 +39,13 @@ namespace Lego_and_other_toys_Project.Data
 
         protected override void OnModelCreating(ModelBuilder modelbuilder)
         {
+            modelbuilder.Entity<LegoSet>().Property( x=>x.Set_id).ValueGeneratedOnAdd();
+            modelbuilder.Entity<BabyToy>().Property( x=>x.Toy_id).ValueGeneratedOnAdd();
+            modelbuilder.Entity<SportToy>().Property( x=>x.Toy_id).ValueGeneratedOnAdd();
+            modelbuilder.Entity<BoardGame>().Property( x=>x.Toy_id).ValueGeneratedOnAdd();
+
+            
+
             base.OnModelCreating(modelbuilder);
         }
 

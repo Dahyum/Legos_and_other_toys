@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lego_and_other_toys_Project.Migrations
 {
     [DbContext(typeof(ToyStoreContext))]
-    [Migration("20230325140339_initil")]
-    partial class initil
+    [Migration("20230325173423_ids_autoicrement")]
+    partial class ids_autoicrement
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

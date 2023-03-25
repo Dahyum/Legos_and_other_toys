@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lego_and_other_toys_Project
+namespace Lego_and_other_toys_Project.Controllers
 {
-    public class LegoSetController
+    internal class LegoController
     {
-        public LegoSetController()
-        {
-
-        }
-
     }
 }

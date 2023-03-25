@@ -24,6 +24,7 @@ namespace Lego_and_other_toys_Project.Data.Models
         }
         [Key]
         [Required]
+        
         public int Toy_id { get; set; }
 
         [Required]

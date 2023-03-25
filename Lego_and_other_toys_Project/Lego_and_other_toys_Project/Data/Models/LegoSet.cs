@@ -29,6 +29,7 @@ namespace Lego_and_other_toys_Project.Data.Models
         }
         [Key]
         [Required]
+
         public int Set_id { get; set; }
 
         [MaxLength(50)]
