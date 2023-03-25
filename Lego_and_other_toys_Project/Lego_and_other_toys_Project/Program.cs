@@ -36,7 +36,7 @@ namespace Lego_and_other_toys_Project
                                 }
                                 break;
                             case 2:
-                                decimal legoprice = int.Parse(Console.ReadLine());
+                                decimal legoprice = decimal.Parse(Console.ReadLine());
                                 LegoController lgp = new LegoController();
                                 lgp.SearchByPrice(legoprice);
                                 Menu.More();
