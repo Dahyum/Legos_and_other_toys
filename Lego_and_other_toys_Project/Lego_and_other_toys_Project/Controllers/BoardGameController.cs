@@ -15,32 +15,37 @@ namespace Lego_and_other_toys_Project.Controllers
         {
             context = new ToyStoreContext();
         }
-        public BoardGame SearchByAge(int age)
+        public void SearchByAge(int age)
         {
-            BoardGame set = context.BoardGames.FirstOrDefault(x => x.Age == age);
+            List<BoardGame> sets = context.BoardGames.Where(x => x.Age >= age).ToList();
             if (age <= 0)
             {
                 throw new ArgumentException("Invalid");
             }
-            Console.WriteLine(set.Toy_name);
-            Console.WriteLine(set.NoP);
-            Console.WriteLine(set.Age);
-            Console.WriteLine(set.Price);
-            return set;
+            foreach (var item in sets)
+            {
+                Console.WriteLine(item.Toy_name);
+                Console.WriteLine(item.NoP);
+                Console.WriteLine(item.Age);
+                Console.WriteLine(item.Price);
+            }
         }
+            
         
-        public BoardGame SearchByNoP(int noP)
+        public void SearchByNoP(int noP)
         {
-            BoardGame set = context.BoardGames.FirstOrDefault(x => x.NoP == noP);
+            List<BoardGame> sets = context.BoardGames.Where(x => x.NoP >= noP).ToList();
             if (noP <= 0)
             {
                 throw new ArgumentException("Invalid");
             }
-            Console.WriteLine(set.Toy_name);
-            Console.WriteLine(set.NoP);
-            Console.WriteLine(set.Age);
-            Console.WriteLine(set.Price);
-            return set;
+            foreach (var item in sets)
+            {
+                Console.WriteLine(item.Toy_name);
+                Console.WriteLine(item.NoP);
+                Console.WriteLine(item.Age);
+                Console.WriteLine(item.Price);
+            }
         }
 
     }

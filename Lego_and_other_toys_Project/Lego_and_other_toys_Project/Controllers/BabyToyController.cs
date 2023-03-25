@@ -16,30 +16,34 @@ namespace Lego_and_other_toys_Project.Controllers
             context = new ToyStoreContext();
         }
 
-        public BabyToy SearchBysize(string size)
+        public void SearchBysize(string size)
         {
-            BabyToy babytoy = context.BabyToys.FirstOrDefault(x => x.Size == size);
+            List<BabyToy> babytoy = context.BabyToys.Where(x => x.Size == size).ToList();
             if (size == null)
             {
                 throw new ArgumentException("Invalid");
             }
-            Console.WriteLine(babytoy.Toy_name);
-            Console.WriteLine(babytoy.Size);
-            Console.WriteLine(babytoy.Age);
-            return babytoy;
+            foreach (var item in babytoy)
+            {
+                Console.WriteLine(item.Toy_name);
+                Console.WriteLine(item.Size);
+                Console.WriteLine(item.Age);
+            }
         }
 
-        public BabyToy SearchByAge(int age)
+        public void SearchByAge(int age)
         {
-            BabyToy babytoy = context.BabyToys.FirstOrDefault(x => x.Age == age);
+            List<BabyToy> babytoy = context.BabyToys.Where(x => x.Age >= age).ToList();
             if (age <= 0)
             {
                 throw new ArgumentException("Invalid");
             }
-            Console.WriteLine(babytoy.Toy_name);
-            Console.WriteLine(babytoy.Size);
-            Console.WriteLine(babytoy.Age);
-            return babytoy;
+            foreach (var item in babytoy)
+            {
+                Console.WriteLine(item.Toy_name);
+                Console.WriteLine(item.Size);
+                Console.WriteLine(item.Age);
+            }
         }
     }
 }

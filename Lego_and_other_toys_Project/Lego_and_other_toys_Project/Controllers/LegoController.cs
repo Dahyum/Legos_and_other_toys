@@ -16,59 +16,69 @@ namespace Lego_and_other_toys_Project.Controllers
             context = new ToyStoreContext();
         }
 
-        public LegoSet SearchByName(string name)
+        public void SearchByName(string name)
         {
-            LegoSet set = context.LEGOSets.FirstOrDefault(x=>x.Set_name == name);
+            List<LegoSet> sets = context.LEGOSets.Where(x=>x.Set_name == name).ToList();
             if (name == null)
             {
                 throw new ArgumentException("Invalid");
             }
-            Console.WriteLine(set.Set_name);
-            Console.WriteLine(set.Series_name);
-            Console.WriteLine(set.Age_group);
-            Console.WriteLine(set.NoB);
-            Console.WriteLine(set.Price);
-            Console.WriteLine(set.Rating);
-            Console.WriteLine(set.In_stock);
-            Console.WriteLine(set.In_Production);
-            return set;
+            foreach (var item in sets)
+            {
 
+                Console.WriteLine(item.Set_name);
+                Console.WriteLine(item.Series_name);
+                Console.WriteLine(item.Age_group);
+                Console.WriteLine(item.NoB);
+                Console.WriteLine(item.Price);
+                Console.WriteLine(item.Rating);
+                Console.WriteLine(item.In_stock);
+                Console.WriteLine(item.In_Production);
+            }
         }
 
-        public LegoSet SearchByPrice(decimal price)
+        public void SearchByPrice(decimal price)
         {
-            LegoSet set = context.LEGOSets.FirstOrDefault(x => x.Price == price);
+            List<LegoSet> sets = context.LEGOSets.Where(x => x.Price <= price).ToList();
             if (price <= 0)
             {
                 throw new ArgumentException("Invalid");
             }
-            Console.WriteLine(set.Set_name);
-            Console.WriteLine(set.Series_name);
-            Console.WriteLine(set.Age_group);
-            Console.WriteLine(set.NoB);
-            Console.WriteLine(set.Price);
-            Console.WriteLine(set.Rating);
-            Console.WriteLine(set.In_stock);
-            Console.WriteLine(set.In_Production);
-            return set;
+            foreach (var item in sets)
+            {
+
+                Console.WriteLine(item.Set_name);
+                Console.WriteLine(item.Series_name);
+                Console.WriteLine(item.Age_group);
+                Console.WriteLine(item.NoB);
+                Console.WriteLine(item.Price);
+                Console.WriteLine(item.Rating);
+                Console.WriteLine(item.In_stock);
+                Console.WriteLine(item.In_Production);
+            }
         }
 
-        public LegoSet SearchByRating(string rating)
+        public void SearchByRating(string rating)
         {
-            LegoSet set = context.LEGOSets.FirstOrDefault(x => x.Rating == rating);
+            List<LegoSet> sets = context.LEGOSets.Where(x => x.Rating == rating).ToList();
             if (rating == null)
             {
                 throw new ArgumentException("Invalid");
             }
-            Console.WriteLine(set.Set_name);
-            Console.WriteLine(set.Series_name);
-            Console.WriteLine(set.Age_group);
-            Console.WriteLine(set.NoB);
-            Console.WriteLine(set.Price);
-            Console.WriteLine(set.Rating);
-            Console.WriteLine(set.In_stock);
-            Console.WriteLine(set.In_Production);
-            return set;
+            foreach (var item in sets)
+            {
+
+            Console.WriteLine(item.Set_name);
+            Console.WriteLine(item.Series_name);
+            Console.WriteLine(item.Age_group);
+            Console.WriteLine(item.NoB);
+            Console.WriteLine(item.Price);
+            Console.WriteLine(item.Rating);
+            Console.WriteLine(item.In_stock);
+            Console.WriteLine(item.In_Production);
+            }
+
+            
 
         }
     }

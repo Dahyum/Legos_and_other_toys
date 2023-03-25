@@ -15,30 +15,34 @@ namespace Lego_and_other_toys_Project.Controllers
         {
             context = new ToyStoreContext();
         }
-        public SportToy SearchByPrice(decimal price)
+        public void SearchByPrice(decimal price)
         {
-            SportToy set = context.SportsToys.FirstOrDefault(x => x.Price == price);
+            List<SportToy> sets = context.SportsToys.Where(x => x.Price <= price).ToList();
             if (price <= 0)
             {
                 throw new ArgumentException("Invalid");
             }
-            Console.WriteLine(set.ToyName);
-            Console.WriteLine(set.Sport);
-            Console.WriteLine(set.Price);
-            return set;
+            foreach (var item in sets)
+            {
+                Console.WriteLine(item.ToyName);
+                Console.WriteLine(item.Sport);
+                Console.WriteLine(item.Price);
+            }
         }
         
-        public SportToy SearchBySport(string sport)
+        public void SearchBySport(string sport)
         {
-            SportToy set = context.SportsToys.FirstOrDefault(x => x.Sport == sport);
+            List<SportToy> sets = context.SportsToys.Where(x => x.Sport == sport).ToList();
             if (sport == null)
             {
                 throw new ArgumentException("Invalid");
             }
-            Console.WriteLine(set.ToyName);
-            Console.WriteLine(set.Sport);
-            Console.WriteLine(set.Price);
-            return set;
+            foreach (var item in sets)
+            {
+                Console.WriteLine(item.ToyName);
+                Console.WriteLine(item.Sport);
+                Console.WriteLine(item.Price);
+            }
         }
     }
 }
