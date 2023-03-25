@@ -23,10 +23,10 @@ namespace Lego_and_other_toys_Project.Controllers
             {
                 throw new ArgumentException("Invalid");
             }
-            return babytoy;
             Console.WriteLine(babytoy.Toy_name);
             Console.WriteLine(babytoy.Size);
             Console.WriteLine(babytoy.Age);
+            return babytoy;
         }
 
         public BabyToy SearchByAge(int age)
@@ -36,10 +36,10 @@ namespace Lego_and_other_toys_Project.Controllers
             {
                 throw new ArgumentException("Invalid");
             }
-            return babytoy;
             Console.WriteLine(babytoy.Toy_name);
             Console.WriteLine(babytoy.Size);
             Console.WriteLine(babytoy.Age);
+            return babytoy;
         }
     }
 }

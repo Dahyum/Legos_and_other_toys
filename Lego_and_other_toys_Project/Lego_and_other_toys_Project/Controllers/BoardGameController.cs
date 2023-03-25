@@ -15,44 +15,32 @@ namespace Lego_and_other_toys_Project.Controllers
         {
             context = new ToyStoreContext();
         }
-        public BoardGame SearchByName(string name)
+        public BoardGame SearchByAge(int age)
         {
-            BoardGame set = context.BoardGames.FirstOrDefault(x => x.Toy_name == name);
-            if (name == null)
+            BoardGame set = context.BoardGames.FirstOrDefault(x => x.Age == age);
+            if (age <= 0)
             {
                 throw new ArgumentException("Invalid");
             }
-            return set;
             Console.WriteLine(set.Toy_name);
             Console.WriteLine(set.NoP);
             Console.WriteLine(set.Age);
             Console.WriteLine(set.Price);
-        }
-        public BoardGame SearchByPrice(decimal price)
-        {
-            BoardGame set = context.BoardGames.FirstOrDefault(x => x.Price == price);
-            if (price <= 0)
-            {
-                throw new ArgumentException("Invalid");
-            }
             return set;
-            Console.WriteLine(set.Toy_name);
-            Console.WriteLine(set.NoP);
-            Console.WriteLine(set.Age);
-            Console.WriteLine(set.Price);
         }
-        public BoardGame NoP(int noP)
+        
+        public BoardGame SearchByNoP(int noP)
         {
             BoardGame set = context.BoardGames.FirstOrDefault(x => x.NoP == noP);
             if (noP <= 0)
             {
                 throw new ArgumentException("Invalid");
             }
-            return set;
             Console.WriteLine(set.Toy_name);
             Console.WriteLine(set.NoP);
             Console.WriteLine(set.Age);
             Console.WriteLine(set.Price);
+            return set;
         }
 
     }

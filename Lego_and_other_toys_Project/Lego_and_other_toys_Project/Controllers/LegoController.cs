@@ -23,7 +23,6 @@ namespace Lego_and_other_toys_Project.Controllers
             {
                 throw new ArgumentException("Invalid");
             }
-            return set;
             Console.WriteLine(set.Set_name);
             Console.WriteLine(set.Series_name);
             Console.WriteLine(set.Age_group);
@@ -32,6 +31,7 @@ namespace Lego_and_other_toys_Project.Controllers
             Console.WriteLine(set.Rating);
             Console.WriteLine(set.In_stock);
             Console.WriteLine(set.In_Production);
+            return set;
 
         }
 
@@ -42,7 +42,6 @@ namespace Lego_and_other_toys_Project.Controllers
             {
                 throw new ArgumentException("Invalid");
             }
-            return set;
             Console.WriteLine(set.Set_name);
             Console.WriteLine(set.Series_name);
             Console.WriteLine(set.Age_group);
@@ -51,6 +50,7 @@ namespace Lego_and_other_toys_Project.Controllers
             Console.WriteLine(set.Rating);
             Console.WriteLine(set.In_stock);
             Console.WriteLine(set.In_Production);
+            return set;
         }
 
         public LegoSet SearchByRating(string rating)
@@ -60,7 +60,6 @@ namespace Lego_and_other_toys_Project.Controllers
             {
                 throw new ArgumentException("Invalid");
             }
-            return set;
             Console.WriteLine(set.Set_name);
             Console.WriteLine(set.Series_name);
             Console.WriteLine(set.Age_group);
@@ -69,6 +68,7 @@ namespace Lego_and_other_toys_Project.Controllers
             Console.WriteLine(set.Rating);
             Console.WriteLine(set.In_stock);
             Console.WriteLine(set.In_Production);
+            return set;
 
         }
     }

@@ -22,34 +22,23 @@ namespace Lego_and_other_toys_Project.Controllers
             {
                 throw new ArgumentException("Invalid");
             }
-            return set;
             Console.WriteLine(set.ToyName);
             Console.WriteLine(set.Sport);
             Console.WriteLine(set.Price);
-        }
-        public SportToy SearchByName(string toyName)
-        {
-            SportToy set = context.SportsToys.FirstOrDefault(x => x.ToyName == toyName);
-            if (toyName == null)
-            {
-                throw new ArgumentException("Invalid");
-            }
             return set;
-            Console.WriteLine(set.ToyName);
-            Console.WriteLine(set.Sport);
-            Console.WriteLine(set.Price);
         }
+        
         public SportToy SearchBySport(string sport)
         {
-            SportToy set = context.SportsToys.FirstOrDefault(x => x.ToyName == sport);
+            SportToy set = context.SportsToys.FirstOrDefault(x => x.Sport == sport);
             if (sport == null)
             {
                 throw new ArgumentException("Invalid");
             }
-            return set;
             Console.WriteLine(set.ToyName);
             Console.WriteLine(set.Sport);
             Console.WriteLine(set.Price);
+            return set;
         }
     }
 }
