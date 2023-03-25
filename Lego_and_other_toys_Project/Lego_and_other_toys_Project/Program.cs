@@ -1,4 +1,6 @@
 ﻿using System;
+using Lego_and_other_toys_Project.Data;
+using Lego_and_other_toys_Project.Data.Models;
 
 
 namespace Lego_and_other_toys_Project
@@ -9,7 +11,7 @@ namespace Lego_and_other_toys_Project
         {
             //lmfao praim neshto
 
-            using (var db = new ToyStore())
+            using (var db = new ToyStoreContext())
             {
                 db.BabyToys.Add(new BabyToy { Toy_name = "Mickey-Mouse Plushie" });
                 db.SaveChanges();
@@ -25,7 +27,7 @@ namespace Lego_and_other_toys_Project
 
 
 
-            Console.WriteLine("            WELCOME THE THE TOY STORE!    \n =========================== \n " +
+            Console.WriteLine("            WELCOME THE THE TOY STORE!    \n ======================================================= \n " +
                 "What would you like to do? \n 1. Look for LEGO toys? \n 2. Look for other toys?");
 
 

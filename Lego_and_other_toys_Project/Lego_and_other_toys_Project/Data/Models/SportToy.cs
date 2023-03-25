@@ -6,13 +6,13 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Lego_and_other_toys_Project
+namespace Lego_and_other_toys_Project.Data.Models
 {
-    public class SportToy : Toy
+    public class SportToy 
     {
         public SportToy()
         {
-                
+
         }
 
         public SportToy(int toy_id, string toyName, string sport, decimal price)

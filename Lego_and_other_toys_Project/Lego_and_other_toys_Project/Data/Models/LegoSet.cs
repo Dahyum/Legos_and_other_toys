@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Specialized;
 
-namespace Lego_and_other_toys_Project
+namespace Lego_and_other_toys_Project.Data.Models
 {
-    public class LegoSet : Toy
+    public class LegoSet 
     {
         public LegoSet()
         {

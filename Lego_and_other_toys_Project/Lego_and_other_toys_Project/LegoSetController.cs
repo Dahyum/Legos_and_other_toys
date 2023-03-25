@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lego_and_other_toys_Project
 {
-     public class Toy
-     {
-        public Toy()
-        {
-                
-        }
-
-     }
+    public class LegoSetController
+    {
+    }
 }
