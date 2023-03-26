@@ -114,6 +114,13 @@ namespace Lego_and_other_toys_Project.Controllers
             legoSet.In_Production = updateProduction;
             context.Update(legoSet);
             context.SaveChanges();
-        }       
+        }
+        public List<LegoSet> GetAllLegoSets()
+        {
+            using (context = new ToyStoreContext())
+            {
+                return context.LEGOSets.ToList();
+            }
+        }
     }
 }

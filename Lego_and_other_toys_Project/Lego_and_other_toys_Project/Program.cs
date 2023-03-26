@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Transactions;
+using System.Windows.Markup;
 using Lego_and_other_toys_Project.Controllers;
 using Lego_and_other_toys_Project.Data;
 using Lego_and_other_toys_Project.Data.Models;
@@ -85,6 +86,18 @@ namespace Lego_and_other_toys_Project
                     case 21:
                         SearchBoardGameByNoP();
                         break;
+                    case 22:
+                        ListAllLegoSets();
+                        break;
+                    case 23:
+                        ListAllBoardgames();
+                        break;
+                    case 24:
+                        ListAllBabyToys();
+                        break;
+                    case 26:
+                        ListAllSportToys();
+                        break;
                     default:
                         break;
                 }
@@ -123,7 +136,11 @@ namespace Lego_and_other_toys_Project
             Console.WriteLine("20. Search board game by age");
             Console.WriteLine("21. Search board game by number of players");
             Console.WriteLine("---------------------------------");
-            Console.WriteLine("22. Exit");
+            Console.WriteLine("22. Show all Legos");
+            Console.WriteLine("23. Show all Board Games");
+            Console.WriteLine("24. Show all BabyToys");
+            Console.WriteLine("25. Show all SportToys");
+            Console.WriteLine("26. Exit");
         }
 
         // sport toy operations
@@ -354,6 +371,59 @@ namespace Lego_and_other_toys_Project
             babyToy.Price = price;
             btc.AddBabyToy(babyToy);
         }
+
+        public static void ListAllBabyToys()
+        {
+            BabyToyController bbc = new BabyToyController();
+            var babytoys = bbc.GetAllBabyToys();
+            foreach (var item in babytoys)
+            {
+                Console.WriteLine($"ID: {item.Toy_id}");
+                Console.WriteLine($"Name: {item.Toy_name}");
+                Console.WriteLine($"Size {item.Size}");
+                Console.WriteLine($"Age: {item.Age}\n-------------------------");
+            }
+        }
+        public static void ListAllBoardgames()
+        {
+            BoardGameController bgc = new BoardGameController();
+            var boardGames = bgc.GetAllBoardGames();
+            foreach (var item in boardGames)
+            {
+                Console.WriteLine($"Name: {item.Toy_name}");
+                Console.WriteLine($"Number of Players: {item.NoP}");
+                Console.WriteLine($"Age: {item.Age}");
+                Console.WriteLine($"Price: {item.Price}\n-------------------------");
+            }
+        }
+        public static void ListAllSportToys()
+        {
+            SportsToysController sgc = new SportsToysController();
+            var sportToys = sgc.GetAllSportToys();
+            foreach (var item in sportToys)
+            {
+                Console.WriteLine($"Name: {item.ToyName}");
+                Console.WriteLine($"Sport: {item.Sport}");
+                Console.WriteLine($"Price: {item.Price}\\n-------------------------");
+            }
+        }
+        public static void ListAllLegoSets()
+        {
+            LegoController lc = new LegoController();
+            var legoSets = lc.GetAllLegoSets();
+            foreach (var item in legoSets)
+            {
+                Console.WriteLine($"Name of Set: {item.Set_name}");
+                Console.WriteLine($"Name of Series: {item.Series_name}");
+                Console.WriteLine($"Age group: {item.Age_group}");
+                Console.WriteLine($"Number of Bricks: {item.NoB}");
+                Console.WriteLine($"Price: {item.Price}");
+                Console.WriteLine($"Rating: {item.Rating}");
+                Console.WriteLine($"In Stock?: {item.In_stock}");
+                Console.WriteLine($"In Production?: {item.In_Production}\n-------------------------");
+            }
+        }
+
         public static void DeleteBabyToy()
         {
             BabyToyController babytoy = new BabyToyController(); Console.WriteLine("Enter the name of the toy you want to delete: ");
@@ -440,8 +510,10 @@ namespace Lego_and_other_toys_Project
             decimal newprice = decimal.Parse(Console.ReadLine());
             Console.WriteLine("Enter new age:");
             int newage = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter new size");
-            int newNoP = int.Parse(Console.ReadLine()); bgc.EditBoardGame(boardGame, newname, newNoP, newage, newprice);
+            Console.WriteLine("Enter new NoP");
+            
+            int newNoP = int.Parse(Console.ReadLine());
+            bgc.EditBoardGame(boardGame, newname, newNoP, newage, newprice);
         }
 
         public static void SearchBoardGameByAge()

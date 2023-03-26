@@ -44,10 +44,9 @@ namespace Lego_and_other_toys_Project.Controllers
                 Console.WriteLine($"Sport: {item.Sport}");
                 Console.WriteLine($"Price: {item.Price}\\n-------------------------");
             }
-            
-            
 
-        }public void AddSportToy(SportToy sporttoy)
+        }
+        public void AddSportToy(SportToy sporttoy)
         {
             context.Add(sporttoy);
             context.SaveChanges();
@@ -82,6 +81,13 @@ namespace Lego_and_other_toys_Project.Controllers
             sportToy.Price = newprice;
             context.Update(sportToy);
             context.SaveChanges();
+        }
+        public List<SportToy> GetAllSportToys()
+        {
+            using (context = new ToyStoreContext())
+            {
+                return context.SportsToys.ToList();
+            }
         }
     }
 }

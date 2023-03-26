@@ -80,5 +80,12 @@ namespace Lego_and_other_toys_Project.Controllers
             context.Update(boardGame);
             context.SaveChanges();
         }
+        public List<BoardGame> GetAllBoardGames()
+        {
+            using (context = new ToyStoreContext())
+            {
+                return context.BoardGames.ToList();
+            }
+        }
     }
 }

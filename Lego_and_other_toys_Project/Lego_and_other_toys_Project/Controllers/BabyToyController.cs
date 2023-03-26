@@ -83,5 +83,13 @@ namespace Lego_and_other_toys_Project.Controllers
             context.Update(babyToy);
             context.SaveChanges();
         }
+        public List<BabyToy> GetAllBabyToys()
+        {
+            using (context = new ToyStoreContext())
+            {
+                return context.BabyToys.ToList();
+            }
+        }
+
     }
 }
