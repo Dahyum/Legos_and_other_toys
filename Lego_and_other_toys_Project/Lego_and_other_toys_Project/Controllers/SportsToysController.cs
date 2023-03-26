@@ -47,8 +47,7 @@ namespace Lego_and_other_toys_Project.Controllers
             
             
 
-        }
-        public void AddSportToy(SportToy sporttoy)
+        }public void AddSportToy(SportToy sporttoy)
         {
             context.Add(sporttoy);
             context.SaveChanges();
