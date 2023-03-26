@@ -15,7 +15,7 @@ namespace Lego_and_other_toys_Project
     {
         static void Main(string[] args)
         {
-            int closeOperationId = 22;
+            int closeOperationId = 26;
             Mainmenu();
             var operation = 0;
             do
@@ -95,7 +95,7 @@ namespace Lego_and_other_toys_Project
                     case 24:
                         ListAllBabyToys();
                         break;
-                    case 26:
+                    case 25:
                         ListAllSportToys();
                         break;
                     default:
