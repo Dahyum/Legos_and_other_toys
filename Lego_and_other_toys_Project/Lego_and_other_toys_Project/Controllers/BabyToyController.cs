@@ -45,5 +45,43 @@ namespace Lego_and_other_toys_Project.Controllers
                 Console.WriteLine($"Age: {item.Age}\n-------------------------");
             }
         }
+
+        public void AddBabyToy(BabyToy babytoy)
+        {
+            context.Add(babytoy);
+            context.SaveChanges();
+        }
+
+        public BabyToy GetBabyToyByName(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentException("Name cannot be empty!");
+            }
+
+            BabyToy babytoy = context.BabyToys.FirstOrDefault(x => x.Toy_name == name);
+            if (babytoy == null)
+            {
+                throw new ArgumentException("No toy found with this name!");
+            }
+            return babytoy;
+        }
+
+        public void DeleteBabyToyByName(string name)
+        {
+            BabyToy babytoytodelete = GetBabyToyByName(name);
+            context.Remove(babytoytodelete);
+            context.SaveChanges();
+        }
+
+        public void EditBabyToy(BabyToy babyToy, string newname, int newage, string newsize, decimal newprice)
+        {
+            babyToy.Toy_name = newname;
+            babyToy.Age = newage;
+            babyToy.Size = newsize;
+            babyToy.Price = newprice;
+            context.Update(babyToy);
+            context.SaveChanges();
+        }
     }
 }

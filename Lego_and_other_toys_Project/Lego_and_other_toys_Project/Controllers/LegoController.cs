@@ -18,7 +18,7 @@ namespace Lego_and_other_toys_Project.Controllers
 
         public void SearchByName(string name)
         {
-            List<LegoSet> sets = context.LEGOSets.Where(x=>x.Set_name == name).ToList();
+            List<LegoSet> sets = context.LEGOSets.Where(x => x.Set_name == name).ToList();
             if (name == null)
             {
                 throw new ArgumentException("Invalid");
@@ -75,5 +75,45 @@ namespace Lego_and_other_toys_Project.Controllers
                 Console.WriteLine($"In Production?: {item.In_Production}\n-------------------------");
             }
         }
+        public void AddLegoSet(LegoSet legoSet)
+        {
+            context.Add(legoSet);
+            context.SaveChanges();
+        }
+
+        public LegoSet GetLegoSetByName(string Legoname)
+        {
+            if (string.IsNullOrEmpty(Legoname))
+            {
+                throw new ArgumentException("Name cannot be empty!");
+            }
+
+            LegoSet legoSet = context.LEGOSets.FirstOrDefault(x => x.Set_name == Legoname);
+            if (legoSet == null)
+            {
+                throw new ArgumentException("No toy found with this name!");
+            }
+            return legoSet;
+        }
+
+        public void DeleteLegoSetByName(string name)
+        {
+            LegoSet legosetdelete = GetLegoSetByName(name);
+            context.Remove(legosetdelete);
+            context.SaveChanges();
+        }
+        public void EditLegoSet(LegoSet legoSet, string newname, string sName, bool updateStock, int updateAge, int NewNoB, decimal newPrice, string newRating, bool updateProduction)
+        {
+            legoSet.Set_name = newname;
+            legoSet.Series_name = sName;
+            legoSet.In_stock = updateStock;
+            legoSet.Age_group = updateAge;
+            legoSet.NoB = NewNoB;
+            legoSet.Price = newPrice;
+            legoSet.Rating = newRating;
+            legoSet.In_Production = updateProduction;
+            context.Update(legoSet);
+            context.SaveChanges();
+        }       
     }
 }
