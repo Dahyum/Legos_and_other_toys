@@ -3,6 +3,7 @@ using Lego_and_other_toys_Project.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,6 +44,44 @@ namespace Lego_and_other_toys_Project.Controllers
                 Console.WriteLine($"Sport: {item.Sport}");
                 Console.WriteLine($"Price: {item.Price}\\n-------------------------");
             }
+            
+            
+
+        }public void AddSportToy(SportToy sporttoy)
+        {
+            context.Add(sporttoy);
+            context.SaveChanges();
+        }
+
+        public SportToy GetSportToyByName(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentException("Name cannot be empty!");
+            }
+            
+            SportToy sporttoy =  context.SportsToys.FirstOrDefault(x=>x.ToyName == name);
+            if (sporttoy==null)
+            {
+                throw new ArgumentException("No toy found with this name!");
+            }
+            return sporttoy;
+        }
+
+        public void DeleteSportToyByName(string name)
+        {
+            SportToy sporttoytodelete = GetSportToyByName(name);
+            context.Remove(sporttoytodelete);
+            context.SaveChanges();
+
+        }
+        public void EditSportToy(SportToy sportToy, string newname, string sport, decimal newprice)
+        {
+            sportToy.ToyName = newname;
+            sportToy.Sport = sport;
+            sportToy.Price = newprice;
+            context.Update(sportToy);
+            context.SaveChanges();
         }
     }
 }

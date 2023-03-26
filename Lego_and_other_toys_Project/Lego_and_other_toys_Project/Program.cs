@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Globalization;
+using System.Transactions;
 using Lego_and_other_toys_Project.Controllers;
 using Lego_and_other_toys_Project.Data;
 using Lego_and_other_toys_Project.Data.Models;
 using Lego_and_other_toys_Project.Input;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Lego_and_other_toys_Project
 {
@@ -60,7 +62,7 @@ namespace Lego_and_other_toys_Project
                             default:
                                 Console.WriteLine("Invalid");
                                 Menu.More();
-                                more1= Console.ReadLine();
+                                more1 = Console.ReadLine();
                                 if (more1 == "no")
                                 {
                                     break;
@@ -162,7 +164,7 @@ namespace Lego_and_other_toys_Project
                                         BoardGameController bgcp = new BoardGameController();
                                         bgcp.SearchByAge(bgage);
                                         Menu.More();
-                                       string  more4 = Console.ReadLine();
+                                        string more4 = Console.ReadLine();
                                         if (more4 == "no")
                                         {
                                             break;
@@ -207,18 +209,68 @@ namespace Lego_and_other_toys_Project
                 }
 
             }
-
-
-
-
-
-
-
-
-
-
-
-
+            
         }
+
+
+        public static void AddSportToy()
+        {
+            SportsToysController sptc = new SportsToysController();
+            SportToy sportToy = new SportToy();
+            Console.WriteLine("Enter toy name:");
+            string name = Console.ReadLine();
+            if (string.IsNullOrEmpty(name))
+            {
+                Console.WriteLine("Name cannot be empty!");
+                return;
+            }
+            Console.WriteLine("Enter toy sport:");
+            string sport = Console.ReadLine();
+            if (string.IsNullOrEmpty(sport))
+            {
+                Console.WriteLine("Sport cannot be empty!");
+                return;
+            }
+            Console.WriteLine("Enter toy price:");
+            decimal price = decimal.Parse(Console.ReadLine());
+
+            if (price <= 0)
+            {
+                Console.WriteLine("Price cannot be 0 or negative!");
+                return;
+
+            }
+            sportToy.ToyName = name;
+            sportToy.Sport = sport;
+            sportToy.Price = price;
+            sptc.AddSportToy(sportToy);
+        }
+        public void DeleteToy()
+        {
+            SportsToysController sport = new SportsToysController();
+
+            Console.WriteLine("Enter the name of the toy you want to delete: ");
+            string name = Console.ReadLine();
+           
+            sport.DeleteSportToyByName(name);
+        }
+
+        public void EditSportToy()
+        {
+            SportsToysController sptc = new SportsToysController();
+            Console.WriteLine("Enter the name of the toy you want to edit: ");
+            string name = Console.ReadLine();
+
+            SportToy sportToy = sptc.GetSportToyByName(name);
+            Console.WriteLine("Enter new name:");
+            string newname = Console.ReadLine();
+            Console.WriteLine("Enter new price:");
+            decimal newprice = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("Enter new sport");
+            string newsport = Console.ReadLine();
+
+            sptc.EditSportToy(sportToy, newname, newsport, newprice);
+        }
+
     }
 }
