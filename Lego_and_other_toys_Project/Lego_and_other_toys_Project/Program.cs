@@ -270,7 +270,7 @@ namespace Lego_and_other_toys_Project
             string newsport = Console.ReadLine();
 
             sptc.EditSportToy(sportToy, newname, newsport, newprice);
-            //мааму дееба 
+           
         }
 
     }
