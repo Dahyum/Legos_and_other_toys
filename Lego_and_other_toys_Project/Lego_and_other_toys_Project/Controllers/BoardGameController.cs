@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Lego_and_other_toys_Project.Controllers
 {
@@ -46,6 +47,40 @@ namespace Lego_and_other_toys_Project.Controllers
                 Console.WriteLine($"Age: {item.Age}");
                 Console.WriteLine($"Price: {item.Price}\n-------------------------");
             }
+        }
+        public void AddBoardGames(BoardGame boardGame)
+        {
+            context.Add(boardGame);
+            context.SaveChanges();
+        }
+
+        public BoardGame GetBoardGameByName(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                throw new ArgumentException("Name cannot be empty!");
+            }
+
+            BoardGame boardGame = context.BoardGames.FirstOrDefault(x => x.Toy_name == name);
+            if (boardGame == null)
+            {
+                throw new ArgumentException("No toy found with this name!");
+            }
+            return boardGame;
+        }
+        public void DeleteBoardGameByName(string name)
+        {
+            BoardGame boardgametodelete = GetBoardGameByName(name);
+            context.Remove(boardgametodelete);
+            context.SaveChanges();
+        }
+
+        public void EditBoardGame(BoardGame boardgame, string name, int nop, int age, decimal price)
+        {
+            boardgame.Toy_name = name;
+            boardgame.NoP = nop;
+            boardgame.Age = age;
+            boardgame.Price = price;
         }
 
     }

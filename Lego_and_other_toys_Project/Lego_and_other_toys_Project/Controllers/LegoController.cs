@@ -29,7 +29,7 @@ namespace Lego_and_other_toys_Project.Controllers
                 Console.WriteLine($"Name of Series: {item.Series_name}");
                 Console.WriteLine($"Age group: {item.Age_group}");
                 Console.WriteLine($"Number of Bricks: {item.NoB}");
-                Console.WriteLine($"Price: {item.Price}");
+                Console.WriteLine($"Price: {item.Price}$");
                 Console.WriteLine($"Rating: {item.Rating}");
                 Console.WriteLine($"In Stock?: {item.In_stock}");
                 Console.WriteLine($"In Production?: {item.In_Production}\n-------------------------");
@@ -49,7 +49,7 @@ namespace Lego_and_other_toys_Project.Controllers
                 Console.WriteLine($"Name of Series: {item.Series_name}");
                 Console.WriteLine($"Age group: {item.Age_group}");
                 Console.WriteLine($"Number of Bricks: {item.NoB}");
-                Console.WriteLine($"Price: {item.Price}");
+                Console.WriteLine($"Price: {item.Price}$");
                 Console.WriteLine($"Rating: {item.Rating}");
                 Console.WriteLine($"In Stock?: {item.In_stock}");
                 Console.WriteLine($"In Production?: {item.In_Production}\n-------------------------");
@@ -69,7 +69,7 @@ namespace Lego_and_other_toys_Project.Controllers
                 Console.WriteLine($"Name of Series: {item.Series_name}");
                 Console.WriteLine($"Age group: {item.Age_group}");
                 Console.WriteLine($"Number of Bricks: {item.NoB}");
-                Console.WriteLine($"Price: {item.Price}");
+                Console.WriteLine($"Price: {item.Price} $");
                 Console.WriteLine($"Rating: {item.Rating}");
                 Console.WriteLine($"In Stock?: {item.In_stock}");
                 Console.WriteLine($"In Production?: {item.In_Production}\n-------------------------");

@@ -209,7 +209,7 @@ namespace Lego_and_other_toys_Project
                 }
 
             }
-            
+
         }
 
 
@@ -245,7 +245,44 @@ namespace Lego_and_other_toys_Project
             sportToy.Price = price;
             sptc.AddSportToy(sportToy);
         }
-        public void DeleteToy()
+
+        public static void AddBoardGame()
+            {
+            BoardGameController bgc = new BoardGameController();
+            BoardGame boardGame = new BoardGame();
+            string name = Console.ReadLine();
+            if (string.IsNullOrEmpty(name))
+            {
+                Console.WriteLine("Name cannot be empty!");
+                return;
+            }
+            Console.WriteLine("Enter game:");
+            int nop = int.Parse(Console.ReadLine());
+            if (nop <= 0)
+            {
+                Console.WriteLine("Number of players cannot be 0 or negative!");
+                return;
+            }
+
+            Console.WriteLine("Enter board age:");
+            int age = int.Parse(Console.ReadLine());
+            if (age < 0)
+            {
+                throw new ArgumentException("Age cannot be negative!");
+
+            }
+            Console.WriteLine("Enter toy price:");
+            decimal price = decimal.Parse(Console.ReadLine());
+
+            if (price <= 0)
+            {
+                Console.WriteLine("Price cannot be 0 or negative!");
+                return;
+
+            }
+
+        }
+        public void DeleteSPortToy()
         {
             SportsToysController sport = new SportsToysController();
 
@@ -253,6 +290,15 @@ namespace Lego_and_other_toys_Project
             string name = Console.ReadLine();
            
             sport.DeleteSportToyByName(name);
+        }
+
+        public static void DeleteBoardGame()
+        {
+            BoardGameController bgc = new BoardGameController();
+            Console.WriteLine("Enter the name of the game you want to delete: ");
+            string name = Console.ReadLine();
+
+            bgc.DeleteBoardGameByName(name);
         }
 
         public void EditSportToy()
@@ -271,6 +317,27 @@ namespace Lego_and_other_toys_Project
 
             sptc.EditSportToy(sportToy, newname, newsport, newprice);
            
+        }
+
+        public void EditBoardGame()
+        {
+            BoardGameController bgc = new BoardGameController();
+            Console.WriteLine("Enter the name of the board game you want to edit: ");
+            string name = Console.ReadLine();
+
+            BoardGame boardgame = bgc.GetBoardGameByName(name);
+            Console.WriteLine("Enter new name: ");
+            string newname = Console.ReadLine();
+
+            Console.WriteLine("Enter new price:");
+           int newprice = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter new NoP: ");
+            int newnop = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter new age: ");
+            int newage = int.Parse(Console.ReadLine());
+
+            bgc.EditBoardGame(boardgame, newname, newprice, newnop, newage);
         }
 
     }
